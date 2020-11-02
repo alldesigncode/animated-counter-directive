@@ -1,0 +1,22 @@
+ng-container(*ngIf="data")
+  .card([ngClass]="data.color")
+    .card-icon-header
+      .icon-container
+        svg.icon
+          use(attr.xlink:href="./assets/icons.svg#{{data.iconName}}")
+    .card-content
+      .card-title
+        h4 {{data.title}}
+      .card-total
+        span.total(
+          [appAnimatedCounter]="data.amount",
+          [delay]="1000"
+        )
+        .percent-wrapper
+          span.icon
+            svg.icon-arrow-up
+              use(href="./assets/icons.svg#icon-arrow-thin-up")
+          span.percent(
+            [appAnimatedCounter]="data.percent",
+            [delay]="1200"
+          ) %
